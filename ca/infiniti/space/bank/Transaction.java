@@ -13,11 +13,11 @@ import java.util.UUID;
 * @since   2018-09-04 
 */
 public class Transaction {
-	UUID global_id;
-	long transaction_id;
-	int type;
-	LocalDateTime transaction_date;
-	BigDecimal amount;
+	private UUID global_id;
+	private long transaction_id;
+	private int type;
+	private LocalDateTime transaction_date;
+	private BigDecimal amount;
 	public Transaction(long trans_id, int type, BigDecimal amount){
 		global_id = UUID.randomUUID();
 		transaction_id = trans_id;
@@ -43,5 +43,8 @@ public class Transaction {
 		result.append(transaction_date);
 		return result.toString();
 			
+	}
+	public UUID getGlobalId(){
+		return global_id;
 	}
 }
